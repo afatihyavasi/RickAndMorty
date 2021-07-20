@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Result } from '../types/Characters';
 
 interface ICharacterCardType {
@@ -7,10 +8,11 @@ interface ICharacterCardType {
 
 const CharacterCard: React.FC<ICharacterCardType> = (props) => {
    const { character } = props;
-
    return (
       <div>
-         <h2> {character.name}</h2>
+         <Link to={`/character/${character.id}`}>
+            <h2> {character.name}</h2>
+         </Link>
          <figure>
             <img
                src={character.image}

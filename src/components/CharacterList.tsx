@@ -22,7 +22,10 @@ const CharacterList = (): JSX.Element => {
 
    useEffect(() => {
       getCharacters();
-   }, [characters]);
+      return () => {
+         setCharacters({} as Characters);
+      };
+   }, []);
 
    return (
       <div>
